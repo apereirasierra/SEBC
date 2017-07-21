@@ -63,3 +63,18 @@ sudo tar zxvf mysql-connector-java-5.1.31.tar.gz
 sudo mkdir -p /usr/share/java/
 $ sudo cp mysql-connector-java-5.1.31/mysql-connector-java-5.1.31-bin.jar /usr/share/java/mysql-connector-java.jar
 
+Start the database service and create these databases
+create database amon DEFAULT CHARACTER SET utf8;
+grant all on scm.* TO 'scm'@'%' IDENTIFIED BY '123qweZ!';
+create database scm DEFAULT CHARACTER SET utf8;
+grant all on rman.* TO 'rman'@'%' IDENTIFIED BY '123qweZ!';
+create database nav DEFAULT CHARACTER SET utf8;
+grant all on nav.* TO 'nav'@'%' IDENTIFIED BY '123qweZ!';
+create database hive DEFAULT CHARACTER SET utf8;
+grant all on hive.* TO 'hive'@'%' IDENTIFIED BY '123qweZ!';
+create database oozie DEFAULT CHARACTER SET utf8; 
+grant all on oozie.* TO 'oozie'@'%' IDENTIFIED BY '123qweZ!'; 
+create database hue DEFAULT CHARACTER SET utf8; 
+grant all on hue.* TO 'hue'@'%' IDENTIFIED BY '123qweZ!'; 
+
+
