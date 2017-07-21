@@ -1,0 +1,40 @@
+
+Detener Cloudera Manager Server, Database, and Agent
+sudo service cloudera-scm-server stop
+sudo service cloudera-scm-server-db stop
+sudo service cloudera-scm-server-db next_stop_fast
+sudo service cloudera-scm-server-db stop
+sudo service cloudera-scm-agent stop
+
+Editar archivo de configuracion
+cd /etc/yum.repos.d
+vi cloudera-manager.repo
+sudo yum 
+sudo yum clean all
+Loaded plugins: amazon-id, rhui-lb, search-disabled-repos
+Cleaning repos: cloudera-manager rhui-REGION-client-config-server-7 rhui-REGION-rhel-server-releases rhui-REGION-rhel-server-rh-common
+Cleaning up everything
+
+sudo yum update
+Loaded plugins: amazon-id, rhui-lb, search-disabled-repos
+cloudera-manager                                                                                                                                           |  951 B  00:00:00     
+rhui-REGION-client-config-server-7                                                                                                                         | 2.9 kB  00:00:00     
+rhui-REGION-rhel-server-releases                                                                                                                           | 3.5 kB  00:00:00     
+rhui-REGION-rhel-server-rh-common                                                                                                                          | 3.8 kB  00:00:00     
+(1/7): rhui-REGION-client-config-server-7/x86_64/primary_db                                                                                                | 5.4 kB  00:00:00     
+(2/7): rhui-REGION-rhel-server-rh-common/7Server/x86_64/group                                                                                              |  104 B  00:00:00     
+(3/7): rhui-REGION-rhel-server-releases/7Server/x86_64/group                                                                                               | 701 kB  00:00:00     
+(4/7): rhui-REGION-rhel-server-rh-common/7Server/x86_64/primary_db                                                                                         | 118 kB  00:00:00     
+(5/7): rhui-REGION-rhel-server-rh-common/7Server/x86_64/updateinfo                                                                                         |  33 kB  00:00:00     
+(6/7): rhui-REGION-rhel-server-releases/7Server/x86_64/updateinfo                                                                                          | 1.9 MB  00:00:00     
+(7/7): rhui-REGION-rhel-server-releases/7Server/x86_64/primary_db                                                                                          |  38 MB  00:00:00     
+cloudera-manager/primary                                                                                                                                   | 4.3 kB  00:00:00     
+cloudera-manager                                                                                                                                                              7/7
+Resolving Dependencies
+
+service cloudera-scm-server stop
+service cloudera-scm-agent stop
+sudo yum upgrade cloudera-manager-server cloudera-manager-daemons cloudera-manager-agent
+
+sudo service cloudera-scm-server start
+sudo service cloudera-scm-agent start
