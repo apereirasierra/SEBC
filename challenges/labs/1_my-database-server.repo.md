@@ -56,3 +56,10 @@ sudo /usr/bin/mysql_secure_installation
 
 aplicar privilegios
 $ sudo /usr/bin/mysql_secure_installation
+
+Instalar el driver de JDBC en todas las maquinas:
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.31.tar.gz
+sudo tar zxvf mysql-connector-java-5.1.31.tar.gz
+sudo mkdir -p /usr/share/java/
+$ sudo cp mysql-connector-java-5.1.31/mysql-connector-java-5.1.31-bin.jar /usr/share/java/mysql-connector-java.jar
+
